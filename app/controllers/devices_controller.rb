@@ -2,7 +2,8 @@ class DevicesController < ApplicationController
   before_action :find_device, except: [:index, :new, :create]
 
   def index
-    @devices = Device.all
+    @are_discarded_devices_shown = params[:show_discarded_devices].present? && ActiveRecord::Type::Boolean.new.cast(params[:show_discarded_devices])
+    @devices = @are_discarded_devices_shown ? Device.all : Device.where(is_discarded: false)
   end
 
   def new
@@ -46,6 +47,7 @@ class DevicesController < ApplicationController
   def device_params
     params.require(:device).permit(
       :anydesk_id,
+      :is_discarded,
       :asset_number,
       :item,
       :location_id,

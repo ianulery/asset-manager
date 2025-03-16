@@ -31,6 +31,12 @@
   </div>
 
   <div class="field">
+    <%= f.label :is_discarded, class: 'checkbox' do %>
+      <%= f.check_box :is_discarded %> Is Discarded
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= f.label :notes, class: 'label' %>
     <%= f.text_area :notes, class: 'textarea', rows: 20 %>
   </div>

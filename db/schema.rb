@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_03_16_193859) do
+ActiveRecord::Schema[7.0].define(version: 2025_03_16_195658) do
   create_table "devices", force: :cascade do |t|
     t.text "notes"
     t.datetime "created_at", precision: nil
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_16_193859) do
     t.string "item"
     t.integer "person_id"
     t.string "anydesk_id"
+    t.boolean "is_discarded", default: false
     t.index ["location_id"], name: "index_devices_on_location_id"
     t.index ["person_id"], name: "index_devices_on_person_id"
   end
