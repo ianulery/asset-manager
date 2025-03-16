@@ -41,3 +41,17 @@ end
 Then('the show discarded devices checkbox should be checked') do
   expect(page).to have_checked_field('Show discarded devices')
 end
+
+When('I set the device acquisition date to today') do
+  fill_in('Date Acquired', with: Date.today.to_s)
+  click_button('Save')
+end
+
+Then('the device should show {int} years') do |int|
+  expect(page).to have_content("#{int} years")
+end
+
+When('I set the device acquisition date to {int} years ago') do |int|
+  fill_in('Date Acquired', with: (Date.today - 2.years).to_s)
+  click_button 'Save'
+end

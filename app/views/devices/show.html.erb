@@ -30,8 +30,12 @@
   <p><strong>Person:</strong> <%= link_to(@device.person.name, @device.person, class: 'text-muted') if @device.person %></p>
   <p><strong>Location:</strong> <%= link_to @device.location.name, @device.location, class: 'text-muted' %></p>
   <p><strong>Licenses:</strong> <%= raw @device.licenses.collect { |l| link_to(l.item, l, class: 'text-muted') }.join(', ') %></p>
-  <p><strong>AnyDesk ID:</strong> <%= link_to(@device.anydesk_id, "anydesk:#{@device.anydesk_id}", class: 'text-muted') if @device.anydesk_id.present? %></p>
+  <% if @device.acquired_at.present? %>
+    <p><strong>Date Acquired:</strong> <%= @device.acquired_at %></p>
+    <p><strong>Device Age:</strong> <%= years_between(date_from: @device.acquired_at, date_to: Time.now) %> years</p>
+  <% end %>
   <p><strong>Is Discarded:</strong> <%= @device.is_discarded ? 'Yes' : 'No' %>
+  <p><strong>AnyDesk ID:</strong> <%= link_to(@device.anydesk_id, "anydesk:#{@device.anydesk_id}", class: 'text-muted') if @device.anydesk_id.present? %></p>
 </div>
 
 <div class="block">

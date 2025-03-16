@@ -5,44 +5,105 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :asset_number, 'Asset Number', class: 'label' %>
-    <%= f.text_field :asset_number, class: 'input' %>
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :asset_number, 'Asset Number', class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <%= f.text_field :asset_number, class: 'input' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :item, 'Item', class: 'label' %>
-    <%= f.text_field :item, class: 'input' %>
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :item, 'Item', class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <%= f.text_field :item, class: 'input' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :person, class: 'label' %>
-    <%= collection_select :device, :person_id, Person.all, :id, :name, { include_blank: true }, { class: 'form-control chosen-select' } %>
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :person, class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <%= collection_select :device, :person_id, Person.all, :id, :name, { include_blank: true }, { class: 'chosen-select' } %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :location, class: 'label' %>
-    <%= collection_select :device, :location_id, Location.all, :id, :name, {}, { class: 'form-control chosen-select' } %>
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :location, class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <%= collection_select :device, :location_id, Location.all, :id, :name, {}, { class: 'chosen-select' } %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :anydesk_id, 'AnyDesk ID', class: 'label' %>
-    <%= f.text_field :anydesk_id, class: 'input' %>
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :acquired_at, 'Date Acquired', class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <%= f.date_field :acquired_at, class: 'input' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :is_discarded, class: 'checkbox' do %>
-      <%= f.check_box :is_discarded %> Is Discarded
-    <% end %>
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :is_discarded, 'Is Discarded', class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <%= f.check_box :is_discarded %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :notes, class: 'label' %>
-    <%= f.text_area :notes, class: 'textarea', rows: 20 %>
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :anydesk_id, 'AnyDesk ID', class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <%= f.text_field :anydesk_id, class: 'input' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <%= f.label :notes, class: 'label' %>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <%= f.text_area :notes, class: 'textarea', rows: 20 %>
+      </div>
+    </div>
   </div>
   
-  <div class="field">
-    <%= f.submit 'Save', class: 'button is-primary' %>
-    <%= link_to 'Cancel', :back, class: 'button' %>
+  <div class="field is-horizontal">
+    <div class="field-label"></div>
+    <div class="field-body">
+      <div class="field is-grouped">
+        <p class="control">
+          <%= f.submit 'Save', class: 'button is-primary' %>
+        </p>
+        <p class="control">
+          <%= link_to 'Cancel', :back, class: 'button' %>
+        </p>
+      </div>
+    </div>
   </div>
 <% end %>

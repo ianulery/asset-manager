@@ -46,6 +46,7 @@ class DevicesController < ApplicationController
 
   def device_params
     params.require(:device).permit(
+      :acquired_at,
       :anydesk_id,
       :is_discarded,
       :asset_number,

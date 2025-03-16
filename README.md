@@ -7,6 +7,7 @@ A Ruby on Rails web application in use since 2013, designed to track the assignm
 - Assign software licenses to devices
 - Quickly search device details
 - Maintain equipment maintenance notes
+- Track device aging
 - Mark equipment as discarded
 - Multiple user support
 - RSpec and Cucumber test coverage
