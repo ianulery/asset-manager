@@ -13,8 +13,6 @@ A Ruby on Rails web application in use since 2013, designed to track the assignm
 ## Deployment
 - Required environment variables:
     - COMPANY_NAME
-    - NOTIFICATION_FROM_EMAIL
-    - ROOT_URL
 
 ## License
 Copyright © 2025 Ian Ulery

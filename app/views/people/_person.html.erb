@@ -9,7 +9,6 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton<%= person.id %>" role="menu">
         <div class="dropdown-content">
           <%= link_to 'View', person, class: 'dropdown-item' %>
-          <%= link_to 'Send Inventory Email', send_inventory_email_person_path(person), class: 'dropdown-item' %>
           <%= link_to 'Edit', edit_person_path(person), class: 'dropdown-item' %>
           <%= link_to 'Delete', person, method: :delete, confirm: 'Are you sure you want to delete this person?', class: 'dropdown-item' %>
         </div>

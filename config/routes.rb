@@ -12,15 +12,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :devices, :users, :licenses
-
-  resources :locations do
-    get 'send_inventory_email', on: :member
-    get 'send_inventory_emails', on: :collection
-  end
-
-  resources :people do
-    get 'send_inventory_email', on: :member
-    get 'send_inventory_emails', on: :collection
-  end
+  resources :devices, :users, :licenses, :people, :locations
 end

@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :find_location, except: [:index, :new, :create, :send_inventory_emails]
+  before_action :find_location, except: [:index, :new, :create]
 
   def index
     @locations = Location.all
@@ -28,22 +28,6 @@ class LocationsController < ApplicationController
   def destroy
     @location.destroy
     redirect_to locations_path
-  end
-
-  def send_inventory_email
-    if @location.people.present?
-      @location.send_inventory_email
-      flash[:notice] = 'Inventory e-mail sent'
-    else
-      flash[:error] = 'No location managers are assigned'
-    end
-    redirect_back fallback_location: { action: :show }
-  end
-
-  def send_inventory_emails
-    Location.find_each { |location| location.send_inventory_email }
-    flash[:notice] = 'Inventory e-mails sent'
-    redirect_back fallback_location: { action: :show }
   end
 
   private

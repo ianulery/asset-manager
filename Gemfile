@@ -29,7 +29,6 @@ group :test do
   gem 'capybara'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem 'email_spec'
   gem 'faker'
   gem 'rails-controller-testing'
 end
