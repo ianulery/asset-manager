@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, :licenses
+  resources :devices, :users, :licenses
 
   resources :locations do
     get 'send_inventory_email', on: :member
@@ -22,9 +22,5 @@ Rails.application.routes.draw do
   resources :people do
     get 'send_inventory_email', on: :member
     get 'send_inventory_emails', on: :collection
-  end
-
-  resources :devices do
-    get 'asset_label', on: :member
   end
 end

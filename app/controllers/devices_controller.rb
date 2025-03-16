@@ -1,5 +1,4 @@
 class DevicesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :asset_label
   before_action :find_device, except: [:index, :new, :create]
 
   def index
@@ -36,10 +35,6 @@ class DevicesController < ApplicationController
   def destroy
     @device.destroy
     redirect_to devices_path
-  end
-
-  def asset_label
-    render layout: false
   end
 
   private

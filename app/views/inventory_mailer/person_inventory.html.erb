@@ -18,14 +18,12 @@
       <td><strong>Asset ID</strong></td>
       <td><strong>Item</strong></td>
       <td><strong>Location</strong></td>
-      <td><strong>Asset Label</strong></td>
     </tr>
     <% @person.devices.each do |device| %>
       <tr>
         <td><%= device.asset_number %></td>
         <td><%= device.item %></td>
         <td><%= device.location.name %></td>
-        <td><%= link_to 'Print Asset Label', asset_label_device_url(device, format: 'pdf', host: ENV['ROOT_URL']), class: 'dropdown-item' %></td>
       </tr>
     <% end %>
   </table>
