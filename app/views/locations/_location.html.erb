@@ -1,7 +1,6 @@
 <tr id="<%= dom_id(location) %>">
   <td><%= link_to location.name, location, class: 'text-primary' %></td>
   <td class="device-count"><%= location.devices.count %></td>
-  <td class="location-managers"><%= location.people.present? ? location.people.collect(&:name).join(', ') : 'None' %></td>
   <td>
     <div class="dropdown">
       <button class="button is-small dropdown-toggle" type="button" id="dropdownMenuSizeButton<%= location.id %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

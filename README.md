@@ -5,10 +5,10 @@ A Ruby on Rails web application in use since 2013, designed to track the assignm
 - Assign devices to people
 - Assign devices to locations
 - Assign software licenses to devices
-- Quickly and easily search device details
+- Quickly search device details
 - Maintain equipment maintenance notes
-- Authentication with support for multiple users
-- RSpec (unit) and Cucumber (feature story) test coverage
+- Multiple user support
+- RSpec and Cucumber test coverage
 
 ## Deployment
 - Required environment variables:

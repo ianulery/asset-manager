@@ -25,7 +25,6 @@
 
 <div class="block">
   <p><strong>Name:</strong> <%= @location.name %></p>
-  <p id="location_managers"><strong>Location Managers:</strong> <%= @location.people.present? ? @location.people.collect(&:name).join(', ') : 'None' %></p>
 </div>
 
 <div class="block">

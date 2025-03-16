@@ -26,8 +26,8 @@ $(document).ready(function() {
 
   $('.location-datatable').dataTable( {
     "aoColumnDefs": [
-      { "bSearchable": false, "aTargets": [ 3 ] },
-      { "bSortable": false, "aTargets": [ 3 ] },
+      { "bSearchable": false, "aTargets": [ 2 ] },
+      { "bSortable": false, "aTargets": [ 2 ] },
     ], "bLengthChange": false, "iDisplayLength": 50 }
   );
 

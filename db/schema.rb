@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2021_10_18_195206) do
+ActiveRecord::Schema[7.0].define(version: 2025_03_16_192423) do
   create_table "devices", force: :cascade do |t|
     t.text "notes"
     t.datetime "created_at", precision: nil
@@ -39,13 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2021_10_18_195206) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.text "notes"
-  end
-
-  create_table "locations_people", id: false, force: :cascade do |t|
-    t.integer "location_id", null: false
-    t.integer "person_id", null: false
-    t.index ["location_id"], name: "index_locations_people_on_location_id"
-    t.index ["person_id"], name: "index_locations_people_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|

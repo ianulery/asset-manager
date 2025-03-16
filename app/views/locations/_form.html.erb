@@ -13,13 +13,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :person, 'Location Managers', class: 'label' %>
-    <div class="control">
-      <%= f.select :person_ids, Person.all.collect {|p| [ p.name, p.id ] }, {}, { class: 'select chosen-select', multiple: true, 'data-placeholder' => 'Select Location Managers' } %>
-    </div>
-  </div>
-
-  <div class="field">
     <%= f.label :notes, class: 'label' %>
     <div class="control">
       <%= f.text_area :notes, class: 'textarea', placeholder: 'Notes', rows: 20 %>
