@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Asset Manager - Log In</title>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <section class="block hero is-primary">
+          <div class="hero-body">
+            <p class="title">Asset Manager</p>
+            <p class="subtitle">Your straightforward, no-fuss solution for tracking IT assets. Log in to continue.</p>
+          </div>
+        </section>
+
+        <%= render 'layouts/messages' %>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'block box'}) do |f| %>
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input', placeholder: 'Email' %>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <%= f.password_field :password, autocomplete: "current-password", class: 'input', placeholder: 'Password' %>
+            </div>
+          </div>
+
+          <%= f.submit 'Log In', class: 'button is-primary' %>
+        <% end %>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="my-2 level align-items-center">
+              <div class="form-check">
+                <%= f.label :remember_me, class: 'label text-muted' do %>
+                  <%= f.check_box :remember_me, class: 'form-check-input' %>
+                  Keep me logged in
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+
+        <div class="block">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

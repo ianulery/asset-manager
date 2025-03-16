@@ -1,0 +1,38 @@
+<div class="level">
+  <div class="level-left">
+    <h3 class="title is-3">License</h3>
+  </div>
+  <div class="level-right">
+    <div class="dropdown">
+      <div class="dropdown-trigger is-hoverable">
+        <button class="button" aria-haspopup="true" aria-controls="dropdownMenuSizeButton3">
+          <span>Action</span>
+          <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3" role="menu">
+        <div class="dropdown-content">
+          <%= link_to 'Edit', edit_license_path(@license), class: 'dropdown-item' %>
+          <%= link_to 'Delete', @license, method: :delete, confirm: 'Are you sure you want to delete this license?', class: 'dropdown-item' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="block">
+  <p><strong>Name:</strong> <%= @license.item %></p>
+  <p><strong>Key:</strong> <%= @license.key %></p>
+  <p><strong>Device:</strong> <%= link_to(@license.device.item, @license.device, class: 'text-muted') if @license.device %></p>
+</div>
+
+<div class="block">
+  <h5 class="title is-5">Notes</h5>
+  <%= simple_format @license.notes %>
+</div>
+
+<%= link_to 'Back to Licenses List', licenses_path, class: 'button' %>

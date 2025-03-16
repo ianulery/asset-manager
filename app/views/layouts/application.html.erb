@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= content_for?(:title) ? yield(:title) : "Asset Manager" %></title>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= csrf_meta_tags %>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bulma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <%= javascript_include_tag 'https://cdn.datatables.net/2.2.2/js/dataTables.js' %>
+    <%= javascript_include_tag 'https://cdn.datatables.net/2.2.2/js/dataTables.bulma.js' %>
+  </head>
+  <body>
+    <nav class="navbar is-info">
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <%= link_to raw('<i class="fa-solid fa-building"></i> Locations'), locations_path, class: 'navbar-item' %>
+          <%= link_to raw('<i class="fa-solid fa-person"></i> People'), people_path, class: 'navbar-item' %>
+          <%= link_to raw('<i class="fa-solid fa-desktop"></i> Devices'), devices_path, class: 'navbar-item' %>
+          <%= link_to raw('<i class="fa-solid fa-key"></i> Licenses'), licenses_path, class: 'navbar-item' %>
+        </div>
+        <div class="navbar-end">
+          <%= link_to('Admin', users_path, class: 'navbar-item') %>
+          <%= link_to raw('<i class="fa-solid fa-arrow-right-from-bracket"></i> Logout'), destroy_user_session_path, class: 'navbar-item', method: :delete %>
+
+
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+    </section>
+  </body>
+</html>

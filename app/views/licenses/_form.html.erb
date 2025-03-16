@@ -1,0 +1,38 @@
+<%= form_for @license do |f| %>
+  <% if @license.errors.any? %>
+    <div class="alert alert-danger">
+      <strong>The record couldn't be saved for the following reasons:</strong> <%= @license.errors.full_messages.join('. ') %>.
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :item, 'Item', class: 'label' %>
+    <%= f.text_field :item, class: 'input' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :key, 'Key', class: 'label' %>
+    <div class="control">
+      <%= f.text_field :key, class: 'input' %>
+    <div class="control">
+  </div>
+  
+  <div class="field">
+    <%= f.label :device, class: 'label' %>
+    <div class="control">
+      <%= collection_select :license, :device_id, Device.all, :id, :searchable_name, { include_blank: true }, { class: 'select chosen-select' } %>
+    <div class="control">
+  </div>
+
+  <div class="field">
+    <%= f.label :notes, class: 'label' %>
+    <div class="control">
+      <%= f.text_area :notes, class: 'textarea', rows: 20 %>
+    <div class="control">
+  </div>
+
+  <div class="field">
+    <%= f.submit 'Save', class: 'button is-primary' %>
+    <%= link_to 'Cancel', :back, class: 'button' %>
+  </div>
+<% end %>

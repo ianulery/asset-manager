@@ -1,0 +1,27 @@
+<% if @person.errors.any? %>
+  <div class="alert alert-warning">
+    <strong>The record couldn't be saved for the following reasons:</strong> <%= @person.errors.full_messages.join('. ') %>.
+  </div>
+<% end %>
+
+<%= form_for @person do |f| %>
+  <div class="field">
+    <%= f.label :first_name, 'First Name', class: 'label' %>
+    <%= f.text_field :first_name, class: 'input', placeholder: 'First Name' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :last_name, 'Last Name', class: 'label' %>
+    <%= f.text_field :last_name, class: 'input', placeholder: 'Last Name' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, 'E-Mail Address', class: 'label' %>
+    <%= f.text_field :email, class: 'input', placeholder: 'E-Mail Address' %>
+  </div>
+
+  <div class="field">
+    <%= f.submit class: 'button is-primary' %>
+    <%= link_to 'Cancel', :back, class: 'button' %>
+  </div>
+<% end %>

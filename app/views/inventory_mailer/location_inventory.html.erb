@@ -1,0 +1,31 @@
+<style type="text/css">
+  * { font-family: Calibri, sans-serif; }
+</style>
+
+<table border="0" style="border-bottom: 1px solid #ccc; width: 100%;">
+<tr><td width="88"></td><td style="padding-left: 10px;">
+
+<p><strong><%= ENV['COMPANY_NAME'] %> IT Equipment</strong><br />Location Inventory</p>
+</td></tr></table>
+
+<p>Hi <%= @location.people.collect(&:first_name).join(' and ') %>,</p>
+<p>The following IT equipment is currently assigned to the <%= @location.name %> location. When convenient, please review the list below and let me know if any equipment should be added or removed.</p>
+<% if @location.devices.empty? %>
+  <p>No IT equipment is currently assigned.</p>
+<% else %>
+  <table border="1" cellpadding="3">
+    <tr>
+      <td><strong>Asset ID</strong></td>
+      <td><strong>Item</strong></td>
+      <td><strong>Asset Label</strong></td>
+    </tr>
+    <% @location.devices.each do |device| %>
+      <tr>
+        <td><%= device.asset_number %></td>
+        <td><%= device.item %></td>
+        <td><%= link_to 'Print Asset Label', asset_label_device_url(device, format: 'pdf', host: ENV['ROOT_URL']), class: 'dropdown-item' %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<p>Thank you</p>

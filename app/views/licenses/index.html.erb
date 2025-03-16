@@ -1,0 +1,29 @@
+<div class="level">
+  <div class="level-left">
+    <h3 class="title is-3">Licenses</h3>
+  </div>
+  <div class="level-right">
+    <%= link_to 'Add License', new_license_path, class: 'button' %>
+  </div>
+</div>
+
+<hr />
+
+<div class="block">
+  <p>The Licenses section provides a comprehensive overview of all software licenses purchased by your organization and tracks their allocation across devices.</p>
+</div>
+
+<table class="table licenses-datatable">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Key</th>
+      <th>Device</th>
+      <th>Notes</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @licenses %>
+  </tbody>
+</table>

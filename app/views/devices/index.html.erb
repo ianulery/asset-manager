@@ -1,0 +1,32 @@
+<div class="level">
+  <div class="level-left">
+    <h3 class="title is-3">Devices</h3>
+  </div>
+  <div class="level-right">
+    <%= link_to 'Add Device', new_device_path, class: 'button' %>    
+  </div>
+</div>
+
+<hr />
+
+<div class="block">
+  <p>The Devices section allows you to manage and track the lifecycle of all IT assets within your organization. Each device in your inventory can be assigned to both individual users and specific locations, ensuring efficient resource allocation and streamlined asset management.</p>
+</div>
+
+<div class="block">
+  <table class="table device-datatable">
+    <thead>
+      <tr>
+        <th>Asset Number</th>
+        <th>Item</th>
+        <th>Person</th>
+        <th>Location</th>
+        <th>Notes</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @devices %>
+    </tbody>
+  </table>
+</div>
