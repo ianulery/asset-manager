@@ -49,8 +49,8 @@ $(document).ready(function() {
 
   $('.people-datatable').dataTable( {
     "aoColumnDefs": [
-      { "bSearchable": false, "aTargets": [ 2 ] },
-      { "bSortable": false, "aTargets": [ 2 ] }
+      { "bSearchable": false, "aTargets": [ 1 ] },
+      { "bSortable": false, "aTargets": [ 1 ] }
     ], "bLengthChange": false, "iDisplayLength": 50 } 
   );
 
