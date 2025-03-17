@@ -1,0 +1,6 @@
+<h1>Device Aging</h1>
+<ol>
+  <% @devices.each do |device| %>
+    <li><%= device.item %> (<%= device.age %>)</li>
+  <% end %>
+</ol>

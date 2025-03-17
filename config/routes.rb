@@ -13,4 +13,11 @@ Rails.application.routes.draw do
   end
 
   resources :devices, :users, :licenses, :people, :locations
+
+  resources :reports, only: [:index] do
+    collection do
+      get :location_inventory
+      get :device_aging
+    end
+  end
 end

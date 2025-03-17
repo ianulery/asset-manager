@@ -9,6 +9,9 @@ A Ruby on Rails web application designed to track the assignment, location, main
 - Maintain equipment maintenance notes
 - Track device aging
 - Mark equipment as discarded
+- Generate reports
+  - Location inventory
+  - Device aging
 - Multiple user support
 
 ## Deployment
