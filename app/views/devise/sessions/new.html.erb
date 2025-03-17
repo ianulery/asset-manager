@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Asset Manager - Log In</title>
+    <title>IT Asset Manager - <%= ENV['COMPANY_NAME'] %> - Log In</title>
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= csrf_meta_tags %>
@@ -14,8 +14,8 @@
       <div class="container">
         <section class="block hero is-primary">
           <div class="hero-body">
-            <p class="title">Asset Manager</p>
-            <p class="subtitle">Your straightforward, no-fuss solution for tracking IT assets. Log in to continue.</p>
+            <p class="title">IT Asset Manager - <%= ENV['COMPANY_NAME'] %></p>
+            <p class="subtitle">Log in to continue</p>
           </div>
         </section>
 
