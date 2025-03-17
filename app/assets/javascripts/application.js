@@ -26,31 +26,23 @@ $(document).ready(function() {
 
   $('.location-datatable').dataTable( {
     "aoColumnDefs": [
-      { "bSearchable": false, "aTargets": [ 2 ] },
-      { "bSortable": false, "aTargets": [ 2 ] },
     ], "bLengthChange": false, "iDisplayLength": 50 }
   );
 
   $('.device-datatable').dataTable( {
     "aoColumnDefs": [
-      { "bSearchable": false, "aTargets": [ 5 ] },
-      { "bSortable": false, "aTargets": [ 5 ] },
       { "bVisible": false, "aTargets": [ 4 ] },
     ], "bLengthChange": false, "iDisplayLength": 50 } 
   );
 
   $('.licenses-datatable').dataTable( {
     "aoColumnDefs": [
-      { "bSearchable": false, "aTargets": [ 4 ] },
-      { "bSortable": false, "aTargets": [ 4 ] },
       { "bVisible": false, "aTargets": [ 1, 3 ] }
     ], "bLengthChange": false, "iDisplayLength": 50 } 
   );
 
   $('.people-datatable').dataTable( {
     "aoColumnDefs": [
-      { "bSearchable": false, "aTargets": [ 1 ] },
-      { "bSortable": false, "aTargets": [ 1 ] }
     ], "bLengthChange": false, "iDisplayLength": 50 } 
   );
 

@@ -3,21 +3,7 @@
     <h3 class="title is-3">People</h3>
   </div>
   <div class="level-right">
-    <div class="dropdown">
-      <div class="dropdown-trigger is-hoverable">
-        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-          <span>Action</span>
-          <span class="icon is-small">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </div>
-      <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-        <div class="dropdown-content">
-          <%= link_to 'Add Person', new_person_path, class: 'dropdown-item' %>
-        </div>
-      </div>
-    </div>
+    <%= link_to 'Add Person', new_person_path, class: 'button' %>
   </div>
 </div>
 
@@ -31,7 +17,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Action</th>
     </tr>
   </thead>
   <tbody>
