@@ -15,7 +15,7 @@ class LicensesController < ApplicationController
       redirect_to @license
     else
       render :new
-    end   
+    end
   end
 
   def edit

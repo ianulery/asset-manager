@@ -1,5 +1,5 @@
 # IT Asset Manager
-A Ruby on Rails web application in use since 2013, designed to track the assignment, location, maintenance records, and software licenses of IT devices in SMB environments.
+A Ruby on Rails web application designed to track the assignment, location, maintenance records, and software licenses of IT devices in SMB environments.
 
 ## Features
 - Assign devices to people
@@ -10,7 +10,6 @@ A Ruby on Rails web application in use since 2013, designed to track the assignm
 - Track device aging
 - Mark equipment as discarded
 - Multiple user support
-- RSpec and Cucumber test coverage
 
 ## Deployment
 - Required environment variables:

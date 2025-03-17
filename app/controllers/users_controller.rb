@@ -9,14 +9,35 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def edit
+    render :new
+  end
+
   def update
-    if @user.update!(user_params)
-      redirect_to users_path, alert: 'User updated.'
+    if params[:user][:password].present?
+      if @user.update!(user_params)
+        redirect_to users_path, alert: 'User updated.'
+      else
+        redirect_to users_path, alert: 'Unable to update user.'
+      end
     else
-      redirect_to users_path, alert: 'Unable to update user.'
+      if @user.update_without_password(user_params)
+        redirect_to users_path, alert: 'User updated.'
+      else
+        redirect_to users_path, alert: 'Unable to update user.'
+      end
     end
   end
     
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to @user
+    else
+      render :new
+    end
+  end
+
   def destroy
     unless @user == current_user
       @user.destroy
@@ -33,6 +54,11 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit()
+    params.require(:user).permit(
+      :name,
+      :email,
+      :password,
+      :password_confirmation
+    )
   end
 end

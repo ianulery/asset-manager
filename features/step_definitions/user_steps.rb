@@ -95,3 +95,48 @@ end
 Then /^I see an invalid login message$/ do
   expect(page).to have_content('Invalid email or password.')
 end
+
+When('I go to the users page') do
+  click_link('Users')
+end
+
+When('I add a new user') do
+  @new_user = FactoryBot.build(:user)
+  click_link('Add User')
+  fill_in('Name', with: @new_user.name)
+  fill_in('Email', with: @new_user.email)
+  fill_in('Password', with: @new_user.password)
+  fill_in('Confirm Password', with: @new_user.password)
+  click_button('Save')
+end
+
+Then('the new user should appear on the users page') do
+  expect(page).to have_content(@new_user.name)
+end
+
+Given('there is another user') do
+  @other_user = FactoryBot.create(:user)
+end
+
+When('I change the name of the other user') do
+  click_link('Edit')
+  @new_name = Faker::Name.name
+  fill_in('Name', with: @new_name)
+  click_button('Save')
+end
+
+Then('the new name should appear on the users page') do
+  expect(page).to have_content(@new_name)
+end
+
+When('I view the other user') do
+  click_link(@other_user.name)
+end
+
+When('I delete the other user') do
+  click_link('Delete user')
+end
+
+Then('the user should not appear on the users page') do
+  expect(page).not_to have_content(@other_user.name)
+end
