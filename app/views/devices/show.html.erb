@@ -24,7 +24,7 @@
     <p><strong>Device Age:</strong> <%= @device.age %></p>
   <% end %>
   <p><strong>Is Discarded:</strong> <%= @device.is_discarded ? 'Yes' : 'No' %>
-  <p><strong>AnyDesk ID:</strong> <%= link_to(@device.anydesk_id, "anydesk:#{@device.anydesk_id}", class: 'text-muted') if @device.anydesk_id.present? %></p>
+  <p><strong>AnyDesk ID:</strong> <%= @device.anydesk_id %></p>
 </div>
 
 <div class="block">
