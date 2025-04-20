@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '3.2.2'
+ruby '3.4.3'
 
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.0'
 gem 'devise'
 gem 'jquery-rails'
 gem 'sass-rails'
