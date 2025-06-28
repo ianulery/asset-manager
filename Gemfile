@@ -16,7 +16,7 @@ end
 group :development do
   gem 'guard-cucumber'
   gem 'guard-rspec'
-  gem 'sqlite3', '~> 1.0'
+  gem 'sqlite3', '~> 2.0'
 end
 
 group :development, :test do
