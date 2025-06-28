@@ -1,4 +1,4 @@
-# IT Asset Manager
+# Asset Manager
 A Ruby on Rails web application designed to track the assignment, location, maintenance records, and software licenses of IT devices in SMB environments.
 
 ## Features

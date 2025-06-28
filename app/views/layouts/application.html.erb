@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title><%= content_for?(:title) ? yield(:title) : "IT Asset Manager - #{ENV['COMPANY_NAME']}" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Asset Manager - #{ENV['COMPANY_NAME']}" %></title>
 
     <%= stylesheet_link_tag "application", media: "all" %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
@@ -22,7 +22,7 @@
       <div class="navbar-menu">
         <div class="navbar-start">
           <div class="navbar-item">
-            <h6 class="title is-6">IT Asset Manager</h6>
+            <h6 class="title is-6">Asset Manager</h6>
           </div>
           <%= link_to raw('<i class="fa-solid fa-building"></i> Locations'), locations_path, class: 'navbar-item' %>
           <%= link_to raw('<i class="fa-solid fa-person"></i> People'), people_path, class: 'navbar-item' %>
@@ -45,5 +45,7 @@
         <%= yield %>
       </div>
     </section>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
